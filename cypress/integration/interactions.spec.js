@@ -32,4 +32,14 @@ describe('Basic page interactions', () => {
             .invoke('text')
             .should('equal', 'Option Three');
     });
+
+    it('should display the name of the most recently hovered item', () => {
+        cy.get('[data-cy=box-4-items-list]')
+            .trigger('mouseover');
+            //.trigger('mouseover', 10, 20); // specifying the coordinates
+
+        cy.get('[data-cy=box-4-selected-name]')
+            .invoke('text')
+            .should('equal', 'Option Two');
+    });
 })
