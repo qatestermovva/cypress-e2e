@@ -9,9 +9,8 @@ describe('Text box with max characters', ()=>{
             .as('charInput');
 
         cy.get('@charsLeftSpan')
-            .them($charsLeftSpan => {
-                expect($charsLeftSpan.text()).to.equal('15')
-            });
+            .invoke('text')
+            .should('equal', '15');
 
         cy.get('@charInput').type('hello');
 
