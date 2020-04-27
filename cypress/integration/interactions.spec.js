@@ -1,3 +1,4 @@
+/// <reference types="Cypress" />
 alert(Cypress.env('MY_ENV_VARIABLE'));
 describe('Basic page interactions', () => {
     beforeEach(()=>{
